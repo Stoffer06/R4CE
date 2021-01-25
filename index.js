@@ -61,7 +61,9 @@ user.on('message', msg=> {
             if(!krunkeruser){
                 msg.channel.send("Please specify krunker username")
             } else{
-                Krunker.getUser(krunkeruser).then()
+                Krunker.getUser(krunkeruser).then(data => {
+                    console.log
+                })
             }
     }   
 })
