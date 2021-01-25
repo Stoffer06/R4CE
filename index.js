@@ -10,9 +10,11 @@ const globalembedcolor = config.globalEmbedColor
 const version = "0.1"
 const admin = config.adminrole
 const announcementchannel = config.announcementChannel
+const KrunkerJS = require('krunker.js')
+const Krunker = new KrunkerJS()
 
 user.on('ready', () => {
-  user.user.setActivity(status), {type: statustype}
+  user.user.setActivity(status, {type: statustype})
   console.log(`R4CEBot > > Enabled Version: ${version}`)
 })
 user.on('message', msg=> {
@@ -52,7 +54,16 @@ user.on('message', msg=> {
                 .setDescription(`**Version**: ${version}\n**Current Status**: ${status}\n**Statustype**: ${statustype}`)
                 .setColor(globalembedcolor)
             )
-    }
+        break;
+        case 'pf': 
+            var krunkeruser = args.slice(1).join(" ")
+
+            if(!krunkeruser){
+                msg.channel.send("Please specify krunker username")
+            } else{
+                Krunker.getUser(krunkeruser).then()
+            }
+    }   
 })
 
 user.login(token)

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Stoffer06/R4CE#readme",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "discord.js": "^12.5.1",
+    "krunker.js": "^1.2.5"
   }
 }
